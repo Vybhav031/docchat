@@ -1,0 +1,34 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: docchat
+      MYSQL_USER: docchat
+      MYSQL_PASSWORD: docchat
+      MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-udocchat", "-pdocchat"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: mysql+pymysql://docchat:docchat@db:3306/docchat
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
+      ASK_RATE_LIMIT: ${ASK_RATE_LIMIT:-}
+    ports:
+      - "8000:8000"
+
+volumes:
+  dbdata:

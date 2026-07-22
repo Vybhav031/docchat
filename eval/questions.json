@@ -1,0 +1,16 @@
+[
+  {"question": "What is retrieval-augmented generation?", "expected_doc": "01_rag_basics.md", "expected_keyword": "grounded"},
+  {"question": "What are the three stages of a RAG system?", "expected_doc": "01_rag_basics.md", "expected_keyword": "Ingestion"},
+  {"question": "Why do RAG systems hallucinate less than bare language models?", "expected_doc": "01_rag_basics.md", "expected_keyword": "constrained"},
+  {"question": "Why does chunk size matter?", "expected_doc": "01_rag_basics.md", "expected_keyword": "context"},
+  {"question": "How does TF-IDF ranking work?", "expected_doc": "02_retrieval_methods.md", "expected_keyword": "inverse document frequency"},
+  {"question": "What is the weakness of lexical retrieval?", "expected_doc": "02_retrieval_methods.md", "expected_keyword": "vocabulary mismatch"},
+  {"question": "How do embeddings handle synonyms?", "expected_doc": "02_retrieval_methods.md", "expected_keyword": "neighbours"},
+  {"question": "What is a hybrid retriever?", "expected_doc": "02_retrieval_methods.md", "expected_keyword": "merges"},
+  {"question": "Why use cosine similarity instead of comparing vector lengths?", "expected_doc": "02_retrieval_methods.md", "expected_keyword": "angle"},
+  {"question": "What is hit rate at k?", "expected_doc": "03_grounding_and_evaluation.md", "expected_keyword": "fraction"},
+  {"question": "What is the main defence against hallucination in RAG?", "expected_doc": "03_grounding_and_evaluation.md", "expected_keyword": "grounding instruction"},
+  {"question": "Why evaluate retrieval before evaluating generated answers?", "expected_doc": "03_grounding_and_evaluation.md", "expected_keyword": "bounds"},
+  {"question": "What is mean reciprocal rank?", "expected_doc": "03_grounding_and_evaluation.md", "expected_keyword": "earlier"},
+  {"question": "How many questions does a useful evaluation set need?", "expected_doc": "03_grounding_and_evaluation.md", "expected_keyword": "twenty"}
+]
